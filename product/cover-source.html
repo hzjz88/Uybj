@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @page{size:1160px 464px;margin:0}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1160px;height:464px;overflow:hidden}
+  :root{
+    --gold:#c8893a;--gold-soft:#e6b061;--gold-deep:#8a5a1e;
+    --ink:#f5efe5;--muted:#b3a796;--muted-2:#7d7264;
+    --serif:"Bitstream Charter","Liberation Serif",Georgia,serif;
+    --sans:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+  }
+  .stage{position:relative;width:1160px;height:464px;
+    background:
+      radial-gradient(680px 520px at 84% -8%, #3a2a17 0%, rgba(58,42,23,0) 58%),
+      radial-gradient(900px 700px at 18% 120%, #1a1410 0%, rgba(26,20,16,0) 60%),
+      linear-gradient(155deg,#0c0a08 0%, #15110d 55%, #0a0807 100%);
+    overflow:hidden;font-family:var(--sans)}
+  /* subtle texture lines */
+  .grain{position:absolute;inset:0;opacity:.06;
+    background-image:repeating-linear-gradient(115deg, #fff 0 1px, transparent 1px 22px)}
+  /* inset frame */
+  .frame{position:absolute;inset:22px;border:1px solid rgba(200,137,58,.28);border-radius:10px;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.02)}
+  .corner{position:absolute;width:16px;height:16px;border:2px solid var(--gold)}
+  .corner.tl{top:22px;left:22px;border-right:none;border-bottom:none;border-radius:10px 0 0 0}
+  .corner.tr{top:22px;right:22px;border-left:none;border-bottom:none;border-radius:0 10px 0 0}
+  .corner.bl{bottom:22px;left:22px;border-right:none;border-top:none;border-radius:0 0 0 10px}
+  .corner.br{bottom:22px;right:22px;border-left:none;border-top:none;border-radius:0 0 10px 0}
+
+  .content{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;
+    padding:54px 70px}
+  /* left */
+  .left{max-width:710px}
+  .eyebrow{font-size:14px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);
+    font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:14px}
+  .eyebrow .ln{width:40px;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
+  h1{font-family:var(--serif);font-weight:700;color:var(--ink);
+    font-size:74px;line-height:.96;letter-spacing:-1px}
+  h1 .alt{color:var(--gold-soft)}
+  .rule{width:78px;height:3px;background:linear-gradient(90deg,var(--gold-soft),var(--gold-deep));
+    margin:24px 0 22px;border-radius:2px}
+  .sub{font-family:var(--serif);font-size:23px;line-height:1.32;color:var(--muted);max-width:560px;font-style:italic}
+  .pills{display:flex;gap:12px;margin-top:30px}
+  .pill{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.02em;color:var(--ink);
+    background:rgba(255,255,255,.035);border:1px solid rgba(200,137,58,.35);
+    padding:9px 16px;border-radius:99px;white-space:nowrap}
+  .pill b{color:var(--gold-soft)}
+
+  /* right emblem */
+  .emblem{position:relative;width:300px;height:300px;flex:0 0 auto;margin-right:6px}
+  .ring{position:absolute;border-radius:50%}
+  .ring.r1{inset:0;border:1px solid rgba(200,137,58,.35)}
+  .ring.r2{inset:18px;border:2px solid rgba(200,137,58,.55)}
+  .ring.r3{inset:30px;border:1px solid rgba(200,137,58,.25)}
+  .glow{position:absolute;inset:30px;border-radius:50%;
+    background:radial-gradient(circle at 50% 35%, rgba(230,176,97,.16), rgba(230,176,97,0) 62%)}
+  .mono{position:absolute;inset:30px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .mono .big{font-family:var(--serif);font-weight:700;font-size:118px;line-height:.8;
+    color:var(--ink);letter-spacing:2px;
+    text-shadow:0 2px 30px rgba(230,176,97,.25)}
+  .mono .cap{font-family:var(--sans);font-size:12px;letter-spacing:.42em;text-transform:uppercase;
+    color:var(--gold);margin-top:16px}
+  /* tick marks around ring */
+  .tick{position:absolute;top:50%;left:50%;width:2px;height:9px;background:rgba(200,137,58,.6);
+    transform-origin:50% 150px}
+</style>
+</head>
+<body>
+  <div class="stage">
+    <div class="grain"></div>
+    <div class="frame"></div>
+    <div class="corner tl"></div><div class="corner tr"></div>
+    <div class="corner bl"></div><div class="corner br"></div>
+
+    <div class="content">
+      <div class="left">
+        <div class="eyebrow"><span class="ln"></span>For men who are done guessing</div>
+        <h1>The Chosen<br>Man <span class="alt">Protocol</span></h1>
+        <div class="rule"></div>
+        <div class="sub">For the man who does everything right&nbsp;—<br>and still goes home alone.</div>
+        <div class="pills">
+          <div class="pill"><b>7</b> patterns &middot; <b>1</b> fix</div>
+          <div class="pill"><b>8-week</b> method</div>
+          <div class="pill"><b>30-day</b> guarantee</div>
+        </div>
+      </div>
+
+      <div class="emblem">
+        <div class="ring r1"></div>
+        <div class="ring r2"></div>
+        <div class="ring r3"></div>
+        <div class="glow"></div>
+        <div id="ticks"></div>
+        <div class="mono">
+          <div class="big">CM</div>
+          <div class="cap">The Protocol</div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script>
+  // tick marks around the emblem
+  const t=document.getElementById('ticks');
+  for(let i=0;i<60;i++){
+    const d=document.createElement('div');d.className='tick';
+    const big=(i%5===0);
+    d.style.height=big?'12px':'6px';
+    d.style.opacity=big?'0.7':'0.3';
+    d.style.transform='translate(-50%,-150px) rotate('+(i*6)+'deg)';
+    d.style.transformOrigin='50% 150px';
+    t.appendChild(d);
+  }
+</script>
+</body>
+</html>

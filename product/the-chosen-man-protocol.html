@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Chosen Man Protocol</title>
+<meta name="description" content="The 8-week method for men who do everything right and still go home alone. The step-by-step fix for the 7 invisible dating patterns." />
+<style>
+  :root{
+    --bg:#0a0807;--bg-2:#13100d;--card:#161210;--line:#2a2420;
+    --ink:#f3ede4;--muted:#9b8f80;--muted-2:#6f655a;
+    --gold:#c8893a;--gold-soft:#e0a85a;--gold-deep:#8a5a1e;
+    --serif:"Iowan Old Style","Palatino Linotype","Times New Roman",Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:radial-gradient(1100px 600px at 50% -10%,#1d1611 0,rgba(29,22,17,0) 60%),var(--bg);
+    color:var(--ink);font-family:var(--sans);line-height:1.62;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:740px;margin:0 auto;padding:30px 22px 90px}
+
+  /* sales hero */
+  .hero{text-align:center;padding:26px 0 8px;border-bottom:1px solid var(--line);margin-bottom:14px}
+  .eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin:0 0 14px}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(32px,7.5vw,52px);line-height:1.06;margin:0 0 14px;letter-spacing:-.01em}
+  .sub{font-size:19px;color:var(--muted);max-width:560px;margin:0 auto 24px}
+  .offerbox{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;max-width:520px;margin:8px auto 6px;text-align:left}
+  .offerbox h3{font-family:var(--serif);font-size:20px;margin:0 0 12px;color:var(--gold-soft)}
+  .offerbox ul{margin:0;padding:0;list-style:none}
+  .offerbox li{position:relative;padding:8px 0 8px 28px;font-size:15.5px;color:var(--ink);border-bottom:1px solid var(--line)}
+  .offerbox li:last-child{border-bottom:none}
+  .offerbox li:before{content:"✓";position:absolute;left:2px;top:8px;color:var(--gold);font-weight:700}
+  .price{display:flex;align-items:baseline;gap:12px;justify-content:center;margin:22px 0 6px}
+  .price .now{font-family:var(--serif);font-size:40px;color:var(--ink)}
+  .price .was{font-size:18px;color:var(--muted-2);text-decoration:line-through}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    font-size:17px;font-weight:600;color:#1a1109;background:linear-gradient(180deg,var(--gold-soft),var(--gold));
+    border:none;border-radius:13px;padding:18px 34px;cursor:pointer;text-decoration:none;
+    box-shadow:0 12px 30px -12px rgba(200,137,58,.6);transition:transform .12s ease}
+  .btn:hover{transform:translateY(-1px)}
+  .guarantee{font-size:13px;color:var(--muted-2);margin-top:16px}
+  .note{max-width:560px;margin:26px auto 0;font-size:13px;color:var(--muted-2);background:var(--bg-2);border:1px solid var(--line);border-radius:12px;padding:14px 16px;line-height:1.5}
+
+  /* article */
+  article{margin-top:40px}
+  article h1{font-size:clamp(26px,5vw,34px);margin-top:48px}
+  article h2{font-family:var(--serif);font-weight:600;font-size:clamp(23px,4.6vw,30px);line-height:1.18;margin:46px 0 14px;padding-top:14px;border-top:1px solid var(--line);letter-spacing:-.01em}
+  article h3{font-family:var(--serif);font-weight:600;font-size:21px;margin:30px 0 10px;color:var(--gold-soft)}
+  article h4{font-size:15px;margin:22px 0 8px;color:var(--gold)}
+  article p{margin:0 0 16px;font-size:16.5px}
+  article strong{color:var(--ink)}
+  article em{color:var(--gold-soft);font-style:italic}
+  article ul,article ol{margin:0 0 18px;padding-left:22px}
+  article li{margin:0 0 9px;font-size:16px}
+  article hr{border:none;border-top:1px solid var(--line);margin:30px 0}
+  blockquote{margin:0 0 22px;padding:16px 20px;background:var(--bg-2);border-left:3px solid var(--gold);border-radius:8px;color:var(--muted)}
+  blockquote p{margin:0 0 10px}
+  blockquote p:last-child{margin:0}
+  table{width:100%;border-collapse:collapse;margin:0 0 22px;font-size:14.5px}
+  th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+  th{background:var(--bg-2);color:var(--gold);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+  .toc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:30px 0}
+  .toc h4{margin:0 0 10px;color:var(--gold)}
+  .toc a{color:var(--muted);text-decoration:none;display:block;padding:5px 0;border-bottom:1px solid var(--line);font-size:15px}
+  .toc a:last-child{border-bottom:none}
+  .toc a:hover{color:var(--gold-soft)}
+  .backlink{display:inline-block;margin-bottom:18px;color:var(--muted);text-decoration:none;font-size:14px}
+  .backlink:hover{color:var(--gold-soft)}
+  footer{margin-top:60px;text-align:center;color:var(--muted-2);font-size:12.5px;line-height:1.7;border-top:1px solid var(--line);padding-top:24px}
+
+  @media print{
+    body{background:#fff;color:#111}
+    .hero,.offerbox,.note,.backlink{display:none}
+    article em{color:#7a4f10}article h2,article h3,.toc h4,th{color:#111}
+    blockquote{background:#f4f0e8}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <a class="backlink" href="../index.html">&larr; Back to the test</a>
+
+  <!-- ===== SALES HERO ===== -->
+  <section class="hero">
+    <p class="eyebrow">The fix for your #1 dealbreaker</p>
+    <h1>The Chosen Man Protocol</h1>
+    <p class="sub">The 8-week method for men who do everything right — and still go home alone.</p>
+
+    <div class="offerbox">
+      <h3>What's inside</h3>
+      <ul>
+        <li>The step-by-step fix for all <strong>7 invisible patterns</strong> — built around the one you scored</li>
+        <li>The <strong>daily floor</strong>: the 4 non-negotiable habits the whole system stands on</li>
+        <li>A <strong>first move for this week</strong> for every pattern — action, not theory</li>
+        <li>The <strong>8-week integration arc</strong> that makes it stick instead of fading in 7 days</li>
+        <li>4 field tools: First-15-Minutes, the texting principles, the Ideal-Woman worksheet, the 12-point readiness audit</li>
+      </ul>
+      <div class="price"><span class="now">$27</span><span class="was">$97</span></div>
+      <div style="text-align:center">
+        <a class="btn" href="#read">Get instant access &rarr;</a>
+        <p class="guarantee">30-day no-questions-asked guarantee · Read it free below</p>
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>Owner setup:</strong> this page doubles as your sales page <em>and</em> the product itself.
+      Point the <code>Get instant access</code> button at your checkout (Stripe/Gumroad), or keep the full
+      protocol readable below as a free value-first lead magnet. Print to PDF for a downloadable version.
+    </div>
+  </section>
+
+  <!-- ===== PRODUCT BODY (rendered from the markdown) ===== -->
+  <article id="read"></article>
+
+  <footer>
+    For educational and self-development purposes only — not therapy or professional advice.<br>
+    &copy; <span id="yr"></span> The Chosen Man · <a href="../index.html" style="color:var(--muted)">Take the test</a>
+  </footer>
+</div>
+
+<!-- The product content lives in the markdown file and is rendered here.
+     Kept inline so the page works as a single static file with no build step. -->
+<script id="md" type="text/markdown">
+## How to use this
+
+There are seven patterns. You don't have all seven equally — your test showed which one runs you most. **Read Part 0 first** (it's the engine under all of them), then go straight to **your pattern's chapter**, do the first move this week, and only then work through the rest.
+
+Each chapter is built the same way: **The loop** (what the pattern actually is), **Why it costs you** (the real mechanism), **The reframe** (the belief shift), **The protocol** (concrete drills), **The first move this week** (one action), and **The trap** (how men fake it and stall).
+
+A note on intent: none of this is about manipulating women, tricking anyone, or performing a character. It's the opposite. Every pattern below is a way you're *hiding* — and the fix is always the same direction: become someone real, grounded, and clear, then stop hiding it. That's what "chosen" means here. Not conquered. Chosen.
+
+## Part 0 — The operating system under all seven patterns
+
+Here's the truth that ties every pattern together: **you are trying to get your sense of worth *from* dating, instead of bringing it *to* dating.**
+
+The Over-Pursuer chases it. The Performer buys it. The Approval-Seeker begs for it. The Passive Waiter hopes it arrives. The Weak Frame apologises for needing it. The Optimized Ghost stockpiles credentials for it. The Pushover trades his spine for it. Same wound, seven costumes.
+
+A woman worth building a life with is not looking for a man she completes. She's looking for a man who is already standing — and chooses *her* on purpose, from a full tank, not an empty one. Everything here pushes you toward three things that make a man genuinely chosen: **groundedness** (worth decided before you enter the room), **direction** (you lead your own life, so leading a connection is natural), and **standards** (you actually choose, which is what makes being chosen by you mean something).
+
+Grounded, directional, selective. Every chapter is one of those three applied to one pattern.
+
+### The daily floor — non-negotiable, all 8 weeks
+
+- **First hour, no phone.** You set your state before the world sets it for you.
+- **One hard thing before noon.** You prove to yourself daily that you do what you say.
+- **One social rep a day.** One real interaction you wouldn't normally start.
+- **Evening review, 60 seconds.** "Where did I shrink today? Where did I lead?"
+
+Do not skip the floor to get to the "good parts." The floor *is* the good part.
+
+## Part 1 — Breaking The Over-Pursuer
+
+**The loop:** You invest first, hardest, and longest. It feels like care. It functions as a low value signal.
+
+**Why it costs you:** Effort isn't attraction. *Investment that hasn't been earned* reads as "I have nothing better going on." You're not too much; you're too soon.
+
+**The reframe:** Match investment, don't lead it. The goal isn't to chase less out of strategy — it's to have a life full enough that chasing feels unnatural.
+
+**The protocol:** The **1:1 rule** — roughly match her energy and pace for the first few weeks. **Kill the follow-up text** — one message, then let it sit. **Fill the calendar** — three things a week that have nothing to do with her. **The pause** — when you feel the pull to push, wait one hour and act from choice, not anxiety.
+
+**The first move this week:** Pick the connection you're over-investing in and match her pace exactly for seven days. Don't initiate twice in a row. Watch what moves.
+
+**The trap:** Swinging into cold silence to *manufacture* chasing. That's pursuit in a disguise. Grounded, not cold.
+
+## Part 2 — Breaking The Performer
+
+**The loop:** You lead with proof — job, travel, the tab — and tighten when she isn't impressed.
+
+**Why it costs you:** Performing announces the insecurity you're hiding. The man running a résumé is asking "Am I enough?" and she hears the question, not the answer.
+
+**The reframe:** Value expressed beats value advertised. Stop auditioning your life.
+
+**The protocol:** **Let silence sit** (three comfortable seconds). **Talk about what you love, not what you've achieved.** **Stop buying certainty** — don't reach for the tab like a lock. **Drop one flex a day** — catch the reach to impress and don't.
+
+**The first move this week:** On your next date, don't mention your job, money, or achievements unless directly asked. Notice how much better it gets.
+
+**The trap:** Performing *anti-performance* — studied aloofness is still a mask. The exit is sincerity.
+
+## Part 3 — Breaking The Approval-Seeker
+
+**The loop:** Your confidence lives in her hands. A single lukewarm reply sinks your day.
+
+**Why it costs you:** When your state depends on her response, you hand her a job no attractive woman wants — managing your worth. She'll put it down.
+
+**The reframe:** Approval is an output of your standards, not an input to your worth.
+
+**The protocol — the internal questioning technique:** when anxiety spikes, run three questions in order: (1) *What am I making this mean about me?* (2) *Is that true, or is it a six-hour-old text?* (3) *What would the grounded version of me do?* On paper for the first two weeks. Plus a weekly **rejection rep** (risk a small no) and **sourcing elsewhere** (a full life can't be held hostage by one woman).
+
+**The first move this week:** Send one message you'd normally agonise over — unedited — then go do something unrelated to whether she replies.
+
+**The trap:** Faking indifference while screaming inside. Loosen the grip for real by building a self that doesn't hang on her answer.
+
+## Part 4 — Breaking The Passive Waiter
+
+**The loop:** You believe you just haven't met her yet, while good connections die from inaction.
+
+**Why it costs you:** "The right one will appear" is expensive because it asks nothing of you while time runs out. Women are drawn to men who *move*.
+
+**The reframe:** You are the one who initiates. Leading is a gift you give, not pressure you apply.
+
+**The protocol — the leading framework:** **Initiate** (you start it). **Direct** ("drinks Thursday at 7," not "we should hang sometime"). **Escalate** by one honest step. The **48-hour rule** — a promising connection gets a concrete next step within 48 hours or it dies.
+
+**The first move this week:** Make one direct ask you'd normally wait on. The point is the rep, not the outcome.
+
+**The trap:** Confusing leading with steamrolling. You initiate; you don't insist.
+
+## Part 5 — Breaking The Weak Frame
+
+**The loop:** Good outfit, decent words, no second date. Your body asks permission before you speak.
+
+**Why it costs you:** Attraction is calibrated in four seconds, mostly non-verbally. A frame that flinches signals "I'm not sure I belong here," and she takes you at your word.
+
+**The reframe:** Take up your space without apology. Calm, grounded, unhurried.
+
+**The protocol — the grounded-presence checklist:** **Posture** (shoulders back and down, settled not puffed). **Eyes** (hold a beat longer; break sideways, never down). **Pace** (slow movement and speech). **Voice** (lower, slower, finish sentences). **Under pressure** (when tested, don't shrink — hold frame, small smile, stay relaxed). Drill one at a time daily in low-stakes settings.
+
+**The first move this week:** Pick one — eye contact or slowing your pace — and run it in every interaction for seven days.
+
+**The trap:** Mistaking rigidity for presence. A strong frame is relaxed, warm, and can laugh at itself.
+
+## Part 6 — Breaking The Optimized Ghost
+
+**The loop:** You cook, lift, read, earn — and stay invisible. Dates are pleasant, then fade.
+
+**Why it costs you:** Discipline without direction reads as nothing. You built the architecture and never opened the door.
+
+**The reframe:** The missing skill isn't another habit — it's expression. Letting a woman actually *feel* you.
+
+**The protocol:** **Bring the man into the room** (relate, don't interview). **Express desire cleanly** (flirt, state interest, create a little charge — respectful and direct aren't opposites). **Trade one optimisation for one expression** this week. **Stop performing readiness** — the architecture is enough; open the door.
+
+**The first move this week:** On your next date, say one true, slightly bold thing you'd normally swallow to stay "appropriate." That sentence is the door.
+
+**The trap:** Turning presence into another optimisation project. It's not a metric — it's permission to be felt.
+
+## Part 7 — Breaking The Pushover
+
+**The loop:** You're the nice one — agreeable, available to whoever shows interest, unable to say what you actually want.
+
+**Why it costs you:** Niceness without a spine is the absence of a self. A man with no "no" gives a woman nothing to respect or rise to.
+
+**The reframe:** Standards are attraction. The capacity to say no is what makes your yes mean anything.
+
+**The protocol — the standards build:** **Define your non-negotiables** across six dimensions (values, lifestyle, communication, emotional capacity, ambition, conflict). **Screen, don't audition** — shift from "do you like me?" to "do *I* like *this*?". **Warm boundaries** — "I had a great time, but I'm looking for something serious, so I'll pass," said warmly. **Refuse the friend-zone trade** — say it once, cleanly, then redirect your energy.
+
+**The first move this week:** Write your six-dimension standards. Then hold one small preference instead of folding.
+
+**The trap:** Overcorrecting into harshness. Real standards are quiet and kind — you just stop abandoning yourself.
+
+## Part 8 — The 8-week integration arc
+
+You build it layer by layer, not all at once.
+
+| Week | Focus | The win |
+|------|-------|---------|
+| 1 | The daily floor only | Four base habits, 7 straight days |
+| 2 | Your pattern's first move | Run the action, log what happens |
+| 3 | Frame + presence | Eye contact, pace, one bold honest sentence become default |
+| 4 | Initiation | You initiate and make one direct ask |
+| 5 | Worth | Internal questioning runs automatically |
+| 6 | Standards | Six-dimension standards written and used as a filter |
+| 7 | Investment calibration | You match, not lead, investment |
+| 8 | Integration | You date as the grounded version — and it's not an act |
+
+The week-8 goal isn't a girlfriend. It's that you've *become* the man who gets chosen — because that man produces relationships on repeat. Build the man. The results follow him.
+
+## Appendix A — The First 15 Minutes
+
+1. **Arrive settled, not eager** — slow your pace at the door.
+2. **Warm, grounded greeting** — eye contact, real smile, unhurried.
+3. **Relate, don't interview** — trade reactions, not a Q&A.
+4. **A little charge** — light, respectful flirtation signals "date, not interview."
+5. **Lead the logistics** — you picked a good spot; you guide the flow.
+
+By minute 15 she should feel *relaxed certainty* from you. That feeling earns the second date.
+
+## Appendix B — Texts that kill attraction (and what to send)
+
+Principles, not scripts. The **needy follow-up** → send nothing. The **over-explainer** → one clean line. The **interview text** → react to something real instead of surveying. The **always-instant reply** → reply when natural to you. The **vague ask** → a specific plan, day, and time. Text to move toward a real-life next step, not to win isolated exchanges.
+
+## Appendix C — The Ideal Woman worksheet
+
+Write your real non-negotiable in one honest sentence for each: **values**, **lifestyle**, **communication**, **emotional capacity**, **ambition**, **conflict**. Most men discover their old "type" was built on appearance and contradicted itself. That discovery *is* the value. Use these as a gentle, internal filter in the first few dates.
+
+## Appendix D — The 12-point readiness audit
+
+Score 0–1 each: (1) worth set before the room; (2) I initiate; (3) I hold silence; (4) I express desire cleanly; (5) I have standards I'll walk for; (6) grounded posture and eye contact; (7) I don't shrink when tested; (8) my life is full without a woman; (9) I match investment; (10) I can say a warm no; (11) I lead logistics; (12) I express value instead of performing it. **Under 6:** start at the daily floor. **6–9:** drill your two weakest. **10+:** you're a few honest reps from chosen.
+
+## Where this goes next
+
+This protocol gets you chosen by quality women — reliably, as a byproduct of who you've become. The next tier is hands-on work until you're the man quality women actively choose, with a guarantee in writing: keep showing up, do the work, and if worthy women aren't entering your life, we keep working until they are.
+
+But that's later. Right now you have a pattern named, a protocol to break it, and a first move to make this week.
+
+Name the pattern. Do the floor. Make the move. You were never undateable — you were unfinished. Let's finish it.
+</script>
+
+<script>
+document.getElementById("yr").textContent = new Date().getFullYear();
+
+// Minimal, dependency-free markdown renderer for the product body.
+function renderMD(src){
+  const lines = src.replace(/\r/g,"").split("\n");
+  let html="", i=0, inUL=false, inTable=false;
+  const inline = s => s
+    .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
+    .replace(/\*\*([^*]+)\*\*/g,"<strong>$1</strong>")
+    .replace(/\*([^*]+)\*/g,"<em>$1</em>")
+    .replace(/`([^`]+)`/g,"<code>$1</code>");
+  const closeUL=()=>{ if(inUL){ html+="</ul>"; inUL=false; } };
+  const closeTable=()=>{ if(inTable){ html+="</tbody></table>"; inTable=false; } };
+  while(i<lines.length){
+    let l=lines[i];
+    if(/^\s*$/.test(l)){ closeUL(); closeTable(); i++; continue; }
+    // table row
+    if(/^\|/.test(l)){
+      const cells=l.split("|").slice(1,-1).map(c=>c.trim());
+      const isSep=cells.every(c=>/^-+$/.test(c));
+      if(isSep){ i++; continue; }
+      if(!inTable){ closeUL(); html+="<table><thead><tr>"+cells.map(c=>"<th>"+inline(c)+"</th>").join("")+"</tr></thead><tbody>"; inTable=true; i++; continue; }
+      html+="<tr>"+cells.map(c=>"<td>"+inline(c)+"</td>").join("")+"</tr>"; i++; continue;
+    } else closeTable();
+    let m;
+    if((m=l.match(/^####\s+(.*)/))){ closeUL(); html+="<h4>"+inline(m[1])+"</h4>"; }
+    else if((m=l.match(/^###\s+(.*)/))){ closeUL(); html+="<h3>"+inline(m[1])+"</h3>"; }
+    else if((m=l.match(/^##\s+(.*)/))){ closeUL(); html+="<h2>"+inline(m[1])+"</h2>"; }
+    else if((m=l.match(/^#\s+(.*)/))){ closeUL(); html+="<h1>"+inline(m[1])+"</h1>"; }
+    else if(/^[-*]\s+/.test(l)){ if(!inUL){ html+="<ul>"; inUL=true; } html+="<li>"+inline(l.replace(/^[-*]\s+/,""))+"</li>"; }
+    else if(/^>\s?/.test(l)){ closeUL(); html+="<blockquote><p>"+inline(l.replace(/^>\s?/,""))+"</p></blockquote>"; }
+    else { closeUL(); html+="<p>"+inline(l)+"</p>"; }
+    i++;
+  }
+  closeUL(); closeTable();
+  return html;
+}
+document.getElementById("read").innerHTML = renderMD(document.getElementById("md").textContent.trim());
+</script>
+</body>
+</html>

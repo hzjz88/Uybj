@@ -3,116 +3,102 @@
 <head>
 <meta charset="utf-8">
 <style>
-  @page{size:1160px 464px;margin:0}
   *{margin:0;padding:0;box-sizing:border-box}
   html,body{width:1160px;height:464px;overflow:hidden}
   :root{
-    --gold:#c8893a;--gold-soft:#e6b061;--gold-deep:#8a5a1e;
-    --ink:#f5efe5;--muted:#b3a796;--muted-2:#7d7264;
-    --serif:"Bitstream Charter","Liberation Serif",Georgia,serif;
     --sans:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+    --serif:"Bitstream Charter","Liberation Serif",Georgia,serif;
   }
-  .stage{position:relative;width:1160px;height:464px;
+  .stage{position:relative;width:1160px;height:464px;overflow:hidden;font-family:var(--sans);
     background:
-      radial-gradient(680px 520px at 84% -8%, #3a2a17 0%, rgba(58,42,23,0) 58%),
-      radial-gradient(900px 700px at 18% 120%, #1a1410 0%, rgba(26,20,16,0) 60%),
-      linear-gradient(155deg,#0c0a08 0%, #15110d 55%, #0a0807 100%);
-    overflow:hidden;font-family:var(--sans)}
-  /* subtle texture lines */
-  .grain{position:absolute;inset:0;opacity:.06;
-    background-image:repeating-linear-gradient(115deg, #fff 0 1px, transparent 1px 22px)}
-  /* inset frame */
-  .frame{position:absolute;inset:22px;border:1px solid rgba(200,137,58,.28);border-radius:10px;
-    box-shadow:inset 0 0 0 1px rgba(255,255,255,.02)}
-  .corner{position:absolute;width:16px;height:16px;border:2px solid var(--gold)}
-  .corner.tl{top:22px;left:22px;border-right:none;border-bottom:none;border-radius:10px 0 0 0}
-  .corner.tr{top:22px;right:22px;border-left:none;border-bottom:none;border-radius:0 10px 0 0}
-  .corner.bl{bottom:22px;left:22px;border-right:none;border-top:none;border-radius:0 0 0 10px}
-  .corner.br{bottom:22px;right:22px;border-left:none;border-top:none;border-radius:0 0 10px 0}
+      radial-gradient(700px 560px at 78% 30%, #4a3417 0%, rgba(74,52,23,0) 55%),
+      radial-gradient(900px 700px at 30% 120%, #19120c 0%, rgba(25,18,12,0) 60%),
+      linear-gradient(160deg,#0b0907 0%, #120d09 50%, #080605 100%);}
+  /* smoke / atmosphere */
+  .smoke{position:absolute;border-radius:50%;filter:blur(60px);opacity:.5}
+  .s1{width:520px;height:420px;right:-60px;top:-80px;background:radial-gradient(circle,#6b4a22,transparent 65%)}
+  .s2{width:420px;height:360px;left:-120px;bottom:-120px;background:radial-gradient(circle,#3a2a16,transparent 65%);opacity:.6}
+  .grain{position:absolute;inset:0;opacity:.05;
+    background-image:repeating-linear-gradient(118deg,#fff 0 1px,transparent 1px 26px)}
+  .vignette{position:absolute;inset:0;box-shadow:inset 0 0 160px 40px rgba(0,0,0,.75)}
 
-  .content{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;
-    padding:54px 70px}
-  /* left */
-  .left{max-width:710px}
-  .eyebrow{font-size:14px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);
-    font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:14px}
-  .eyebrow .ln{width:40px;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
-  h1{font-family:var(--serif);font-weight:700;color:var(--ink);
-    font-size:74px;line-height:.96;letter-spacing:-1px}
-  h1 .alt{color:var(--gold-soft)}
-  .rule{width:78px;height:3px;background:linear-gradient(90deg,var(--gold-soft),var(--gold-deep));
-    margin:24px 0 22px;border-radius:2px}
-  .sub{font-family:var(--serif);font-size:23px;line-height:1.32;color:var(--muted);max-width:560px;font-style:italic}
-  .pills{display:flex;gap:12px;margin-top:30px}
-  .pill{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.02em;color:var(--ink);
-    background:rgba(255,255,255,.035);border:1px solid rgba(200,137,58,.35);
-    padding:9px 16px;border-radius:99px;white-space:nowrap}
-  .pill b{color:var(--gold-soft)}
+  .content{position:absolute;inset:0;display:flex;align-items:center;padding:0 64px}
+  /* LEFT */
+  .left{width:660px;z-index:3}
+  .badge{display:inline-flex;align-items:center;gap:9px;border:1.5px solid rgba(200,137,58,.7);
+    color:#e6b061;font-size:13px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
+    padding:8px 15px;border-radius:6px;margin-bottom:22px}
+  .badge .lock{font-size:13px}
+  .kicker{font-size:14px;letter-spacing:.30em;text-transform:uppercase;color:#a99477;font-weight:700;margin-bottom:10px}
+  .title{font-family:var(--sans);font-weight:800;text-transform:uppercase;line-height:.92;letter-spacing:-.5px}
+  .title .l1{font-size:52px;color:#f3ece1;text-shadow:0 2px 18px rgba(0,0,0,.6)}
+  .title .l2{font-size:88px;
+    background:linear-gradient(180deg,#fbe09b 0%,#e7b063 34%,#bd7f30 60%,#f6cd80 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    filter:drop-shadow(0 3px 10px rgba(0,0,0,.55)) drop-shadow(0 1px 0 rgba(120,75,20,.6))}
+  .sub{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.3;color:#c2b4a2;
+    max-width:540px;margin-top:22px}
+  .sub b{color:#e6b061;font-style:normal;font-weight:700}
 
-  /* right emblem */
-  .emblem{position:relative;width:300px;height:300px;flex:0 0 auto;margin-right:6px}
-  .ring{position:absolute;border-radius:50%}
-  .ring.r1{inset:0;border:1px solid rgba(200,137,58,.35)}
-  .ring.r2{inset:18px;border:2px solid rgba(200,137,58,.55)}
-  .ring.r3{inset:30px;border:1px solid rgba(200,137,58,.25)}
-  .glow{position:absolute;inset:30px;border-radius:50%;
-    background:radial-gradient(circle at 50% 35%, rgba(230,176,97,.16), rgba(230,176,97,0) 62%)}
-  .mono{position:absolute;inset:30px;display:flex;flex-direction:column;align-items:center;justify-content:center}
-  .mono .big{font-family:var(--serif);font-weight:700;font-size:118px;line-height:.8;
-    color:var(--ink);letter-spacing:2px;
-    text-shadow:0 2px 30px rgba(230,176,97,.25)}
-  .mono .cap{font-family:var(--sans);font-size:12px;letter-spacing:.42em;text-transform:uppercase;
-    color:var(--gold);margin-top:16px}
-  /* tick marks around ring */
-  .tick{position:absolute;top:50%;left:50%;width:2px;height:9px;background:rgba(200,137,58,.6);
-    transform-origin:50% 150px}
+  /* RIGHT — book mockup */
+  .right{position:absolute;right:90px;top:50%;transform:translateY(-50%);z-index:2}
+  .glowpad{position:absolute;width:420px;height:420px;left:-90px;top:-60px;border-radius:50%;
+    background:radial-gradient(circle,rgba(230,176,97,.20),transparent 60%)}
+  .book{position:relative;width:248px;height:340px;
+    transform:perspective(1100px) rotateY(-19deg) rotateX(3deg);transform-style:preserve-3d;
+    background:linear-gradient(125deg,#221a12 0%,#14100b 55%,#0c0907 100%);
+    border:1px solid rgba(200,137,58,.45);border-radius:5px 9px 9px 5px;
+    box-shadow:-34px 36px 70px rgba(0,0,0,.65), inset 0 0 50px rgba(0,0,0,.55);}
+  .book .spine{position:absolute;left:0;top:0;width:14px;height:100%;
+    background:linear-gradient(90deg,#000,rgba(0,0,0,0));border-radius:5px 0 0 5px}
+  .book .sheen{position:absolute;inset:0;border-radius:5px 9px 9px 5px;
+    background:linear-gradient(115deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,0) 30%)}
+  .bk{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:26px 20px;text-align:center}
+  .bk .top{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#a08a6c;font-weight:700;position:absolute;top:26px;left:0;right:0}
+  .emb{width:78px;height:78px;border-radius:50%;border:1px solid rgba(200,137,58,.55);
+    display:flex;align-items:center;justify-content:center;margin-bottom:18px;
+    box-shadow:inset 0 0 18px rgba(230,176,97,.18)}
+  .emb .cm{font-family:var(--serif);font-weight:700;font-size:34px;
+    background:linear-gradient(180deg,#fbe09b,#bd7f30);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .bk .bt{font-family:var(--sans);font-weight:800;text-transform:uppercase;font-size:19px;line-height:1.05;letter-spacing:.5px;
+    background:linear-gradient(180deg,#fbe09b,#cf9038);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .bk .bs{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a7a64;margin-top:12px}
+  .bk .men{position:absolute;bottom:24px;left:0;right:0;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:#b98a3e;font-weight:700}
 </style>
 </head>
 <body>
   <div class="stage">
+    <div class="smoke s1"></div><div class="smoke s2"></div>
     <div class="grain"></div>
-    <div class="frame"></div>
-    <div class="corner tl"></div><div class="corner tr"></div>
-    <div class="corner bl"></div><div class="corner br"></div>
 
     <div class="content">
       <div class="left">
-        <div class="eyebrow"><span class="ln"></span>For men who are done guessing</div>
-        <h1>The Chosen<br>Man <span class="alt">Protocol</span></h1>
-        <div class="rule"></div>
-        <div class="sub">For the man who does everything right&nbsp;—<br>and still goes home alone.</div>
-        <div class="pills">
-          <div class="pill"><b>7</b> patterns &middot; <b>1</b> fix</div>
-          <div class="pill"><b>8-week</b> method</div>
-          <div class="pill"><b>30-day</b> guarantee</div>
+        <div class="badge"><span class="lock">🔒</span> For Men Only</div>
+        <div class="kicker">The fix for your #1 dealbreaker</div>
+        <div class="title">
+          <div class="l1">The Chosen Man</div>
+          <div class="l2">Protocol</div>
         </div>
+        <div class="sub">The exact system for becoming the man quality women<br>choose — <b>on purpose, every time.</b></div>
       </div>
+    </div>
 
-      <div class="emblem">
-        <div class="ring r1"></div>
-        <div class="ring r2"></div>
-        <div class="ring r3"></div>
-        <div class="glow"></div>
-        <div id="ticks"></div>
-        <div class="mono">
-          <div class="big">CM</div>
-          <div class="cap">The Protocol</div>
+    <div class="right">
+      <div class="glowpad"></div>
+      <div class="book">
+        <div class="spine"></div>
+        <div class="sheen"></div>
+        <div class="bk">
+          <div class="top">The Protocol</div>
+          <div class="emb"><span class="cm">CM</span></div>
+          <div class="bt">The Chosen<br>Man Protocol</div>
+          <div class="bs">8-Week Method</div>
+          <div class="men">For Men Only</div>
         </div>
       </div>
     </div>
+
+    <div class="vignette"></div>
   </div>
-<script>
-  // tick marks around the emblem
-  const t=document.getElementById('ticks');
-  for(let i=0;i<60;i++){
-    const d=document.createElement('div');d.className='tick';
-    const big=(i%5===0);
-    d.style.height=big?'12px':'6px';
-    d.style.opacity=big?'0.7':'0.3';
-    d.style.transform='translate(-50%,-150px) rotate('+(i*6)+'deg)';
-    d.style.transformOrigin='50% 150px';
-    t.appendChild(d);
-  }
-</script>
 </body>
 </html>

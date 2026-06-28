@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Why Are You Still Single? — The 3-Minute Test | The Chosen Man</title>
+<meta name="description" content="A 3-minute diagnostic for men who keep doing 'everything right' and still go home alone. Find your #1 invisible dealbreaker — the silent pattern costing you the relationship you actually want." />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Why Are You Still Single? Find Your #1 Invisible Dealbreaker" />
+<meta property="og:description" content="3-minute test for men who are done dating with no direction. Discover the silent pattern keeping you single." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0908;
+    --bg-2:#13110e;
+    --panel:#16130f;
+    --panel-2:#1c1813;
+    --line:rgba(200,144,47,.18);
+    --line-soft:rgba(255,255,255,.07);
+    --gold:#d2a24c;
+    --gold-2:#e7c075;
+    --gold-deep:#b07d27;
+    --cream:#efe9df;
+    --muted:#9b9183;
+    --muted-2:#6f675b;
+    --red:#c25b4a;
+    --green:#7fae6a;
+    --shadow:0 30px 80px -30px rgba(0,0,0,.85);
+    --maxw:680px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:
+      radial-gradient(1200px 700px at 50% -10%, rgba(178,126,40,.16), transparent 60%),
+      radial-gradient(900px 600px at 100% 110%, rgba(120,80,20,.10), transparent 60%),
+      var(--bg);
+    color:var(--cream);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+    overflow-x:hidden;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  .display{font-family:'Playfair Display',Georgia,serif;font-weight:700;line-height:1.08;letter-spacing:-.01em}
+  .eyebrow{
+    font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);
+    font-weight:600;display:inline-block;
+  }
+  .gold-text{background:linear-gradient(100deg,var(--gold-2),var(--gold) 55%,var(--gold-deep));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    background:linear-gradient(180deg,var(--gold-2),var(--gold) 40%,var(--gold-deep));
+    color:#1a1303;font-weight:700;font-size:16px;letter-spacing:.02em;
+    border:none;border-radius:14px;padding:17px 30px;cursor:pointer;width:100%;
+    box-shadow:0 14px 34px -12px rgba(210,162,76,.6), inset 0 1px 0 rgba(255,255,255,.35);
+    transition:transform .15s ease, box-shadow .15s ease, filter .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);filter:brightness(1.05);box-shadow:0 20px 44px -14px rgba(210,162,76,.7)}
+  .btn:active{transform:translateY(0)}
+  .btn.ghost{background:transparent;color:var(--cream);border:1px solid var(--line);box-shadow:none;font-weight:600}
+  .btn.ghost:hover{border-color:var(--gold);filter:none}
+
+  /* ---------- screens ---------- */
+  .screen{animation:fade .45s ease both}
+  /* force-hide inactive screens regardless of per-screen #id display rules */
+  .screen:not(.active){display:none !important}
+  @keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+  /* ---------- HERO ---------- */
+  #hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:64px 0 48px;text-align:center}
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);
+    background:rgba(210,162,76,.06);color:var(--gold-2);
+    font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;
+    padding:8px 15px;border-radius:100px;margin-bottom:30px;
+  }
+  .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold)}
+  #hero h1{font-size:clamp(38px,8.4vw,60px);margin-bottom:22px}
+  #hero h1 em{font-style:italic;color:var(--gold-2)}
+  #hero .sub{font-size:clamp(16px,4.2vw,19px);color:var(--muted);max-width:540px;margin:0 auto 38px}
+  #hero .sub b{color:var(--cream);font-weight:600}
+  .cta-wrap{max-width:380px;margin:0 auto;width:100%}
+  .reassure{margin-top:16px;font-size:13px;color:var(--muted-2);display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+  .reassure span{display:inline-flex;align-items:center;gap:6px}
+  .check{color:var(--gold)}
+  .proof{
+    margin-top:54px;padding-top:30px;border-top:1px solid var(--line-soft);
+    display:flex;gap:30px;justify-content:center;flex-wrap:wrap;color:var(--muted)
+  }
+  .proof .stat{text-align:center}
+  .proof .num{font-family:'Playfair Display',serif;font-size:30px;color:var(--gold-2);line-height:1}
+  .proof .lbl{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted-2);margin-top:7px}
+
+  /* ---------- QUIZ ---------- */
+  #quiz{padding:34px 0 70px;min-height:100vh}
+  .progress-head{position:sticky;top:0;z-index:5;padding:18px 0 16px;
+    background:linear-gradient(180deg,var(--bg) 65%,transparent);margin:-34px -22px 26px;padding-left:22px;padding-right:22px}
+  .progress-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+  .progress-row .q-count{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600}
+  .progress-row .brand{font-family:'Playfair Display',serif;font-size:15px;color:var(--muted)}
+  .bar{height:5px;background:rgba(255,255,255,.07);border-radius:100px;overflow:hidden}
+  .bar > i{display:block;height:100%;width:0;border-radius:100px;
+    background:linear-gradient(90deg,var(--gold-deep),var(--gold-2));transition:width .45s cubic-bezier(.3,.9,.3,1)}
+  .q-text{font-size:clamp(23px,5.4vw,30px);margin:8px 0 26px}
+  .options{display:flex;flex-direction:column;gap:12px}
+  .opt{
+    text-align:left;background:var(--panel);border:1px solid var(--line-soft);
+    border-radius:14px;padding:18px 18px;color:var(--cream);font-size:16px;font-weight:500;
+    cursor:pointer;transition:all .16s ease;display:flex;align-items:center;gap:14px;line-height:1.4;
+  }
+  .opt:hover{border-color:var(--gold);background:var(--panel-2);transform:translateX(3px)}
+  .opt .mark{
+    flex:0 0 24px;height:24px;border-radius:50%;border:2px solid var(--muted-2);
+    display:grid;place-items:center;transition:all .16s ease;margin-top:1px
+  }
+  .opt:hover .mark{border-color:var(--gold)}
+  .opt.sel{border-color:var(--gold);background:linear-gradient(180deg,rgba(210,162,76,.12),rgba(210,162,76,.04))}
+  .opt.sel .mark{background:var(--gold);border-color:var(--gold)}
+  .opt.sel .mark::after{content:"";width:8px;height:8px;border-radius:50%;background:#1a1303}
+  .q-nav{display:flex;justify-content:space-between;align-items:center;margin-top:26px;gap:12px}
+  .back-link{background:none;border:none;color:var(--muted-2);font-size:14px;cursor:pointer;font-family:inherit;padding:8px 4px}
+  .back-link:hover{color:var(--cream)}
+
+  /* ---------- EMAIL GATE ---------- */
+  #gate{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:60px 0;text-align:center}
+  .lock{width:58px;height:58px;border-radius:16px;margin:0 auto 24px;display:grid;place-items:center;
+    background:linear-gradient(180deg,rgba(210,162,76,.18),rgba(210,162,76,.05));border:1px solid var(--line)}
+  #gate h2{font-size:clamp(28px,6.6vw,40px);margin-bottom:16px}
+  #gate p{color:var(--muted);max-width:460px;margin:0 auto 30px;font-size:16px}
+  .field{max-width:400px;margin:0 auto;width:100%}
+  .field input{
+    width:100%;background:var(--panel);border:1px solid var(--line-soft);border-radius:13px;
+    padding:16px 18px;color:var(--cream);font-size:16px;font-family:inherit;margin-bottom:12px;outline:none;transition:border .15s
+  }
+  .field input:focus{border-color:var(--gold)}
+  .field input::placeholder{color:var(--muted-2)}
+  .err{color:var(--red);font-size:13px;min-height:18px;margin-bottom:6px;text-align:left;padding-left:4px}
+  .fineprint{font-size:12px;color:var(--muted-2);margin-top:14px;max-width:360px;margin-left:auto;margin-right:auto}
+  .skip{margin-top:18px}
+  .skip button{background:none;border:none;color:var(--muted-2);text-decoration:underline;cursor:pointer;font-size:13px;font-family:inherit}
+
+  /* ---------- RESULT ---------- */
+  #result{padding:50px 0 80px}
+  .result-eyebrow{text-align:center;margin-bottom:14px}
+  .result-card{
+    background:linear-gradient(180deg,var(--panel-2),var(--panel));
+    border:1px solid var(--line);border-radius:22px;padding:34px 26px;box-shadow:var(--shadow);
+    position:relative;overflow:hidden
+  }
+  .result-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+  .pat-icon{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700;text-align:center;display:block;margin-bottom:10px}
+  .result-card h2{font-size:clamp(30px,7vw,44px);text-align:center;margin-bottom:8px}
+  .result-card .tagline{text-align:center;color:var(--muted);font-style:italic;font-family:'Playfair Display',serif;font-size:18px;margin-bottom:26px}
+  .result-card .body p{margin-bottom:16px;color:#d8d1c5}
+  .result-card .body strong{color:var(--gold-2);font-weight:600}
+  .signs{background:rgba(0,0,0,.25);border:1px solid var(--line-soft);border-radius:14px;padding:20px 22px;margin:24px 0}
+  .signs h4{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;font-weight:600}
+  .signs li{list-style:none;padding:7px 0 7px 28px;position:relative;color:#d8d1c5;font-size:15px}
+  .signs li::before{content:"";position:absolute;left:0;top:13px;width:11px;height:11px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%,var(--gold-2),var(--gold-deep))}
+  .cost{border-left:3px solid var(--red);background:rgba(194,91,74,.07);padding:16px 18px;border-radius:0 12px 12px 0;margin:24px 0;color:#e7d8d2;font-size:15px}
+
+  /* offer block */
+  .offer{margin-top:30px;background:linear-gradient(180deg,var(--panel),#100d0a);border:1px solid var(--line);
+    border-radius:22px;padding:32px 26px;box-shadow:var(--shadow);text-align:center}
+  .offer .kicker{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:14px}
+  .offer h3{font-size:clamp(26px,6vw,36px);margin-bottom:8px}
+  .offer .for-men{display:inline-block;border:1px solid var(--line);border-radius:6px;font-size:11px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--gold-2);padding:4px 9px;margin-bottom:18px}
+  .offer .desc{color:var(--muted);max-width:480px;margin:0 auto 22px;font-size:15.5px}
+  .includes{text-align:left;max-width:440px;margin:0 auto 26px;display:flex;flex-direction:column;gap:11px}
+  .includes div{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:#d8d1c5}
+  .includes .ar{color:var(--gold);font-weight:700;flex:0 0 auto}
+  .price-row{display:flex;align-items:baseline;gap:12px;justify-content:center;margin-bottom:6px}
+  .price-now{font-family:'Playfair Display',serif;font-size:46px;color:var(--cream);line-height:1}
+  .price-old{font-size:20px;color:var(--muted-2);text-decoration:line-through}
+  .price-cur{color:var(--gold-2);font-weight:600;letter-spacing:.05em}
+  .price-note{font-size:13px;color:var(--muted-2);margin-bottom:22px}
+  .guarantee{margin-top:18px;font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px;justify-content:center}
+  .restart{text-align:center;margin-top:40px}
+  .restart button{background:none;border:none;color:var(--muted-2);text-decoration:underline;cursor:pointer;font-size:13px;font-family:inherit}
+
+  .footer{text-align:center;color:var(--muted-2);font-size:12px;padding:40px 0 50px;line-height:1.7}
+  .footer a{color:var(--muted)}
+
+  @media(max-width:480px){
+    .proof{gap:22px}
+    .result-card,.offer{padding:26px 20px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<section id="hero" class="screen active">
+  <div class="wrap">
+    <span class="badge"><span class="dot"></span> For men only · 3-minute test</span>
+    <h1 class="display">Why Are You Still <em>Single?</em></h1>
+    <p class="sub">You do everything right — you lift, you earn, you show up. And you still go home alone. <b>There's one invisible pattern doing the damage.</b> This test finds it in 3 minutes.</p>
+    <div class="cta-wrap">
+      <button class="btn" onclick="Quiz.start()">Find My #1 Dealbreaker →</button>
+      <div class="reassure">
+        <span><span class="check">✦</span> 12 questions</span>
+        <span><span class="check">✦</span> No signup to start</span>
+        <span><span class="check">✦</span> Brutally honest result</span>
+      </div>
+    </div>
+    <div class="proof">
+      <div class="stat"><div class="num">7</div><div class="lbl">Hidden patterns</div></div>
+      <div class="stat"><div class="num">3 min</div><div class="lbl">To your result</div></div>
+      <div class="stat"><div class="num">90%</div><div class="lbl">Never spot it alone</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUIZ ============ -->
+<section id="quiz" class="screen">
+  <div class="wrap">
+    <div class="progress-head">
+      <div class="progress-row">
+        <span class="q-count" id="qCount">Question 1 of 12</span>
+        <span class="brand">The Chosen Man</span>
+      </div>
+      <div class="bar"><i id="bar"></i></div>
+    </div>
+    <h2 class="q-text display" id="qText">…</h2>
+    <div class="options" id="options"></div>
+    <div class="q-nav">
+      <button class="back-link" id="backBtn" onclick="Quiz.back()">← Back</button>
+      <span style="font-size:13px;color:var(--muted-2)">Pick the one that's most true</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EMAIL GATE ============ -->
+<section id="gate" class="screen">
+  <div class="wrap">
+    <div class="lock">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 10V8a6 6 0 1112 0v2" stroke="#d2a24c" stroke-width="2" stroke-linecap="round"/><rect x="4" y="10" width="16" height="11" rx="2.5" stroke="#d2a24c" stroke-width="2"/><circle cx="12" cy="15.5" r="1.6" fill="#d2a24c"/></svg>
+    </div>
+    <h2 class="display">Your result is <span class="gold-text">ready.</span></h2>
+    <p>We scored your answers against the 7 patterns. Enter your best email and we'll unlock your diagnosis — plus the first move to fix it.</p>
+    <form class="field" id="gateForm" onsubmit="return Quiz.submitEmail(event)">
+      <input type="text" id="nameInput" placeholder="First name" autocomplete="given-name" />
+      <input type="email" id="emailInput" placeholder="you@email.com" autocomplete="email" />
+      <div class="err" id="emailErr"></div>
+      <button class="btn" type="submit">Unlock My Result →</button>
+    </form>
+    <p class="fineprint">No spam. No daily emails you didn't ask for. Unsubscribe in one click.</p>
+    <div class="skip"><button onclick="Quiz.showResult()">Skip and just show my result</button></div>
+  </div>
+</section>
+
+<!-- ============ RESULT ============ -->
+<section id="result" class="screen">
+  <div class="wrap">
+    <div class="result-eyebrow"><span class="eyebrow">Your diagnosis</span></div>
+    <div class="result-card">
+      <span class="pat-icon" id="rTag">Pattern</span>
+      <h2 class="display" id="rName">…</h2>
+      <p class="tagline" id="rTagline">…</p>
+      <div class="body" id="rBody"></div>
+      <div class="signs">
+        <h4>Sound familiar?</h4>
+        <ul id="rSigns"></ul>
+      </div>
+      <div class="cost" id="rCost"></div>
+      <p class="body" id="rTurn" style="color:#d8d1c5"></p>
+    </div>
+
+    <!-- OFFER -->
+    <div class="offer">
+      <div class="kicker">The Fix · Complete System</div>
+      <h3 class="display">The Chosen Man</h3>
+      <div class="for-men">For men only</div>
+      <p class="desc">The complete, no-fluff system for becoming the man a quality woman chooses, commits to, and won't risk losing — built to dismantle all 7 patterns, starting with yours.</p>
+      <div class="includes">
+        <div><span class="ar">→</span> <span>The 7-Pattern teardown — find every silent leak and seal it</span></div>
+        <div><span class="ar">→</span> <span>The First-Date System: the first 15 minutes, the tension framework, natural escalation</span></div>
+        <div><span class="ar">→</span> <span>The exact texts — openers, the day-before line, the day-after text (and 27 that kill attraction)</span></div>
+        <div><span class="ar">→</span> <span>Qualification: how to choose instead of chase — and screen for a real partner</span></div>
+        <div><span class="ar">→</span> <span>The 30-Day Plan that turns it from reading into results</span></div>
+      </div>
+      <div class="price-row">
+        <span class="price-now">$29</span>
+        <span class="price-old">$79</span>
+        <span class="price-cur">USD</span>
+      </div>
+      <div class="price-note">One coffee. A completely different dating life.</div>
+      <div class="cta-wrap">
+        <a class="btn" id="buyBtn" href="#" target="_blank" rel="noopener">Get The Chosen Man →</a>
+      </div>
+      <div class="guarantee">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-4z" stroke="#9b9183" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="#9b9183" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Instant download · Lifetime access · 7-day no-questions refund
+      </div>
+    </div>
+
+    <div class="restart"><button onclick="Quiz.restart()">↺ Retake the test</button></div>
+  </div>
+</section>
+
+<div class="footer wrap">
+  <p>The Chosen Man · Dating &amp; relationship coaching for men.<br>
+  This test is for educational purposes and is not a substitute for professional advice.</p>
+</div>
+
+<script>
+/* ============================================================
+   CONFIG — edit these two lines and you're live.
+   ============================================================ */
+const CONFIG = {
+  // Your Lava Top product URL (where "Buy" sends them). Replace with yours.
+  buyUrl: "https://lava.top/",
+  // Optional: a Formspree (or similar) endpoint to collect emails.
+  // Leave "" to skip the network call (emails still saved in the browser).
+  emailEndpoint: ""
+};
+
+/* ============================================================
+   PATTERNS — the 7 invisible dealbreakers
+   ============================================================ */
+const PATTERNS = {
+  pursuer: {
+    tag: "The Over-Pursuer",
+    name: "You Chase",
+    tagline: "She doesn't move toward what's already chasing her.",
+    body: [
+      "You text first, plan everything, and make yourself available the second she calls. You read it as effort. <strong>She reads it as low value.</strong>",
+      "The moment a woman becomes your priority before she's earned it, the chase begins — and women don't move toward what's already running after them. Your investment outpaces hers at every step, and the imbalance does the killing."
+    ],
+    signs: ["You're almost always the one texting first","You over-explain and double-text when she's quiet","You cancel your own plans the moment she's free","A little distance from her sends you into a spin"],
+    cost: "Every match, every date, every promising start quietly dies the same way — not because she lost interest in <em>you</em>, but because you handed your value away before she could want it.",
+    turn: "The fix isn't playing games. It's rebuilding your center of gravity so your energy stops leaking toward her — and hers starts moving toward you."
+  },
+  frame: {
+    tag: "The Weak Frame",
+    name: "You Seek Approval",
+    tagline: "A man who needs her 'yes' to feel okay can't lead her anywhere.",
+    body: [
+      "You apologize for wanting what you want. You soften your opinions, mirror hers, and wait to see where she stands before you'll say where you stand. <strong>You're outsourcing your confidence to a woman who hasn't earned that power yet.</strong>",
+      "Frame is the thing she feels before you say a word — whether you're grounded in yourself or auditioning for her approval. Yours bends the second there's tension, and she feels every inch of the bend."
+    ],
+    signs: ["You change your answer based on her reaction","You're afraid of a 'no', so you never really ask","You agree with things you don't actually agree with","Conflict makes you fold, not hold"],
+    cost: "Women don't commit to men they can move at will. When your frame collapses under the smallest pressure, you become safe, predictable, and completely un-magnetic.",
+    turn: "The shift is learning to hold a calm, clear position under tension — to stop needing her approval and become the man whose approval she wants."
+  },
+  avoider: {
+    tag: "The Avoider",
+    name: "You Pull Away",
+    tagline: "You want the relationship and sabotage it the moment it gets real.",
+    body: [
+      "You're fine right up until it gets close. Then you go cold, get 'busy', pick the flaw, or quietly let it fade. <strong>You confuse distance with strength — but it's fear wearing a confident mask.</strong>",
+      "Real intimacy asks you to be seen without the armor, and that's the one thing you've trained yourself to never do. So you keep choosing the exit over the risk, and call it 'standards'."
+    ],
+    signs: ["Things cool off right when they start getting serious","You find the dealbreaker the moment you feel close","You go quiet or 'busy' after a great date","You've ended things you secretly wanted to keep"],
+    cost: "You don't lose women because they're wrong for you. You lose them because closeness trips an alarm — and you run before she can.",
+    turn: "The work is learning to stay — to let yourself be seen and hold connection without needing to control the distance."
+  },
+  performer: {
+    tag: "The Performer",
+    name: "You Try to Impress",
+    tagline: "She doesn't choose the man with the most — she chooses the man who needs the least.",
+    body: [
+      "You lead with the car, the salary, the resume of accomplishments. You pick up every tab and fill every silence trying to prove you're enough. <strong>Every move says the opposite of what you intend.</strong>",
+      "The richest guy in the room is usually the most anxious one — running a transaction instead of a conversation, trying to buy certainty in the one place certainty repels. She feels the neediness under the performance instantly."
+    ],
+    signs: ["You drop status, money, or achievements early","You over-give and over-plan to lock her in","Silence makes you nervous, so you perform","You feel you have to 'earn' a beautiful woman"],
+    cost: "You can build the bank account and still go home alone, because performance broadcasts scarcity — and scarcity is the least attractive thing a man can carry into a room.",
+    turn: "The shift is groundedness: deciding you're enough before you walk in, so you stop auditioning and start choosing."
+  },
+  drifter: {
+    tag: "The Drifter",
+    name: "You Have No Direction",
+    tagline: "Discipline without direction reads as invisible.",
+    body: [
+      "You cook, you lift, you read, your finances are stable — you built the whole architecture. <strong>But you forgot to open the door.</strong> Women don't feel a man who is optimized. They feel a man who is going somewhere and leads.",
+      "Self-improvement became a way to avoid the real exposure: choosing, leading, declaring intent. So you stay busy, productive, and completely unseen — a great catch on paper that no one reaches for."
+    ],
+    signs: ["You're 'doing all the right things' and still single","You improve yourself instead of putting yourself out there","You rarely lead — you wait to be chosen","You can't say where any of this is actually going"],
+    cost: "Years pass. You get fitter, richer, smarter — and no closer to the relationship you want, because effort without direction is just motion she can't feel.",
+    turn: "The fix is turning all that built value into presence and leadership — letting her actually see and feel the man you've become."
+  },
+  settler: {
+    tag: "The Settler",
+    name: "You Don't Qualify",
+    tagline: "You take whoever shows interest instead of choosing who's right.",
+    body: [
+      "You date whoever likes you first. You can't name what you actually need beyond 'attractive', so you fall for potential, ignore red flags, and pour months into women who were never a fit. <strong>You're being chosen instead of choosing.</strong>",
+      "Without standards and a screen, attraction makes the decision for you — and attraction is a terrible judge of compatibility. So you keep landing in the wrong situations and calling it bad luck."
+    ],
+    signs: ["You can't define your 'type' beyond looks","You ignore red flags when she's interested","You commit fast, then realize it's wrong","You keep attracting casual situations, not partners"],
+    cost: "You spend your best years on the wrong women — not because the right ones aren't there, but because you never built the filter to recognize and choose them.",
+    turn: "The shift is qualification: defining what a real partner looks like across the dimensions that matter, then screening for it from date one."
+  },
+  ghost: {
+    tag: "The Ghost",
+    name: "You Can't Be Seen",
+    tagline: "You do everything right and stay completely invisible.",
+    body: [
+      "Good guy. Good job. Good habits. And somehow you're background in every room — the one she'd never think of 'that way'. <strong>It's not your looks. It's that you never let yourself be fully seen.</strong>",
+      "You shrink to stay safe. You don't take up space, don't express interest plainly, don't let your edges show. So women feel… nothing. Not rejection — just absence. And absence never gets chosen."
+    ],
+    signs: ["People like you but you're never pursued","You blend in — rarely the man she remembers","You hold back interest to avoid rejection","You feel unseen no matter how much you improve"],
+    cost: "You're not undateable. You're unfinished — invisible by your own design, watching less impressive men get chosen because at least they let themselves be felt.",
+    turn: "The work is presence: learning to take up space, express clearly, and let a woman actually see you — without shrinking and without performing."
+  }
+};
+
+/* ============================================================
+   QUESTIONS — each option weights one or more patterns
+   ============================================================ */
+const QUESTIONS = [
+  { q:"A match goes quiet for a day. What actually happens in you?",
+    a:[
+      {t:"I send a follow-up — maybe two — to restart it",w:{pursuer:2}},
+      {t:"I spiral a little and check my phone constantly",w:{pursuer:1,ghost:1}},
+      {t:"I go cold and lose interest fast",w:{avoider:2}},
+      {t:"I tell myself I didn't care that much anyway",w:{avoider:1,ghost:1}}
+    ]},
+  { q:"On a first date, the conversation hits a silence. You…",
+    a:[
+      {t:"Jump in to fill it — mention something impressive",w:{performer:2}},
+      {t:"Get anxious and start over-asking questions",w:{ghost:1,frame:1}},
+      {t:"Let it sit — silence doesn't rattle me",w:{}},
+      {t:"Soften and follow whatever she wants to talk about",w:{frame:2}}
+    ]},
+  { q:"Be honest — why are you still single?",
+    a:[
+      {t:"I do everything right and still don't get chosen",w:{ghost:2,drifter:1}},
+      {t:"I scare them off by coming on too strong",w:{pursuer:2}},
+      {t:"I pull back when it starts getting serious",w:{avoider:2}},
+      {t:"I keep ending up with the wrong women",w:{settler:2}}
+    ]},
+  { q:"She disagrees with you on something you believe. You…",
+    a:[
+      {t:"Reconsider — maybe she's right, I don't want friction",w:{frame:2}},
+      {t:"Hold my view calmly, no need to win",w:{}},
+      {t:"Drop it to keep the mood light",w:{frame:1,avoider:1}},
+      {t:"Double down hard to prove my point",w:{performer:1}}
+    ]},
+  { q:"How would you describe your 'type'?",
+    a:[
+      {t:"Honestly… attractive. Beyond that I'm not sure",w:{settler:2}},
+      {t:"Whoever's actually into me",w:{settler:1,ghost:1}},
+      {t:"I have a clear picture of values and lifestyle fit",w:{}},
+      {t:"High standards on looks, vague on everything else",w:{settler:2}}
+    ]},
+  { q:"You've been improving yourself for a while. Where's it going?",
+    a:[
+      {t:"Nowhere romantic — I'm just 'getting ready'",w:{drifter:2}},
+      {t:"I'm fitter and richer but no closer to a relationship",w:{drifter:2,ghost:1}},
+      {t:"It's translating into actually meeting people",w:{}},
+      {t:"I improve instead of putting myself out there",w:{drifter:1,ghost:1}}
+    ]},
+  { q:"A woman you like is clearly into you. Your instinct?",
+    a:[
+      {t:"Lock it in fast before she changes her mind",w:{pursuer:2,settler:1}},
+      {t:"Go all-in giving and planning to keep her",w:{performer:1,pursuer:1}},
+      {t:"Enjoy it but stay grounded and keep choosing",w:{}},
+      {t:"Feel a quiet urge to pull back",w:{avoider:2}}
+    ]},
+  { q:"What do you usually lead with when you meet someone new?",
+    a:[
+      {t:"What I do, what I've built, what I'm into",w:{performer:2}},
+      {t:"Not much — I kind of fade into the background",w:{ghost:2}},
+      {t:"I read her and adjust to what she seems to want",w:{frame:2}},
+      {t:"Genuine presence — I'm just there, fully",w:{}}
+    ]},
+  { q:"Things are getting serious with someone good. You feel…",
+    a:[
+      {t:"A pull to find the flaw or create distance",w:{avoider:2}},
+      {t:"Anxious she'll leave, so I cling harder",w:{pursuer:2}},
+      {t:"Like I have to keep proving I'm worth it",w:{performer:1,frame:1}},
+      {t:"Steady — I can let it be close",w:{}}
+    ]},
+  { q:"Which line stings the most because it's true?",
+    a:[
+      {t:"'You're such a great guy' — and nothing happens",w:{ghost:2}},
+      {t:"'You're too much / too intense'",w:{pursuer:2}},
+      {t:"'You're hard to get close to'",w:{avoider:2}},
+      {t:"'Why do you let people treat you like that?'",w:{frame:1,settler:1}}
+    ]},
+  { q:"Your texting between dates usually looks like…",
+    a:[
+      {t:"Me initiating most of it, hoping for a reply",w:{pursuer:2}},
+      {t:"Long, over-explained messages",w:{pursuer:1,performer:1}},
+      {t:"I go quiet and let it cool off",w:{avoider:2}},
+      {t:"Light, balanced, leads somewhere",w:{}}
+    ]},
+  { q:"Deep down, what do you believe you have to do to keep a great woman?",
+    a:[
+      {t:"Impress her enough that she stays",w:{performer:2}},
+      {t:"Never rock the boat or upset her",w:{frame:2}},
+      {t:"Be available whenever she needs me",w:{pursuer:2}},
+      {t:"Nothing 'extra' — be a man worth keeping",w:{}}
+    ]}
+];
+
+/* ============================================================
+   ENGINE
+   ============================================================ */
+const Quiz = (() => {
+  let idx = 0;
+  const answers = new Array(QUESTIONS.length).fill(null);
+
+  const screens = ["hero","quiz","gate","result"];
+  function show(id){
+    screens.forEach(s=>document.getElementById(s).classList.toggle("active", s===id));
+    window.scrollTo({top:0,behavior:"instant"in window ? "auto":"auto"});
+    document.documentElement.scrollTop = 0; document.body.scrollTop = 0;
+  }
+
+  function start(){ idx=0; show("quiz"); render(); }
+
+  function render(){
+    const q = QUESTIONS[idx];
+    document.getElementById("qCount").textContent = `Question ${idx+1} of ${QUESTIONS.length}`;
+    document.getElementById("bar").style.width = ((idx)/QUESTIONS.length*100)+"%";
+    document.getElementById("qText").textContent = q.q;
+    document.getElementById("backBtn").style.visibility = idx===0 ? "hidden":"visible";
+    const box = document.getElementById("options");
+    box.innerHTML = "";
+    q.a.forEach((opt,i)=>{
+      const el = document.createElement("button");
+      el.className = "opt" + (answers[idx]===i ? " sel":"");
+      el.innerHTML = `<span class="mark"></span><span>${opt.t}</span>`;
+      el.onclick = ()=>choose(i);
+      box.appendChild(el);
+    });
+  }
+
+  function choose(i){
+    answers[idx] = i;
+    [...document.querySelectorAll(".opt")].forEach((el,k)=>el.classList.toggle("sel",k===i));
+    setTimeout(next, 230);
+  }
+
+  function next(){
+    if(idx < QUESTIONS.length-1){ idx++; render(); }
+    else { document.getElementById("bar").style.width="100%"; finish(); }
+  }
+  function back(){ if(idx>0){ idx--; render(); } }
+
+  function score(){
+    const tally = {pursuer:0,frame:0,avoider:0,performer:0,drifter:0,settler:0,ghost:0};
+    answers.forEach((ai,qi)=>{
+      if(ai==null) return;
+      const w = QUESTIONS[qi].a[ai].w || {};
+      for(const k in w) tally[k]+=w[k];
+    });
+    // dominant pattern (ties broken by question order priority below)
+    const order=["pursuer","frame","avoider","performer","drifter","settler","ghost"];
+    let best=order[0];
+    order.forEach(k=>{ if(tally[k]>tally[best]) best=k; });
+    return {best, tally};
+  }
+
+  let result=null;
+  function finish(){
+    result = score();
+    try{ localStorage.setItem("cm_result", JSON.stringify({...result, at:Date.now()})); }catch(e){}
+    show("gate");
+    document.getElementById("nameInput").focus();
+  }
+
+  function submitEmail(e){
+    e.preventDefault();
+    const email = document.getElementById("emailInput").value.trim();
+    const name = document.getElementById("nameInput").value.trim();
+    const err = document.getElementById("emailErr");
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ err.textContent="Enter a valid email to unlock your result."; return false; }
+    err.textContent="";
+    const lead = {name,email,pattern:result?.best,scores:result?.tally,at:new Date().toISOString()};
+    try{
+      const leads = JSON.parse(localStorage.getItem("cm_leads")||"[]"); leads.push(lead);
+      localStorage.setItem("cm_leads", JSON.stringify(leads));
+    }catch(e){}
+    if(CONFIG.emailEndpoint){
+      fetch(CONFIG.emailEndpoint,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(lead)}).catch(()=>{});
+    }
+    showResult();
+    return false;
+  }
+
+  function showResult(){
+    if(!result) result = score();
+    const p = PATTERNS[result.best];
+    document.getElementById("rTag").textContent = p.tag;
+    document.getElementById("rName").textContent = p.name;
+    document.getElementById("rTagline").textContent = '"'+p.tagline+'"';
+    document.getElementById("rBody").innerHTML = p.body.map(x=>`<p>${x}</p>`).join("");
+    document.getElementById("rSigns").innerHTML = p.signs.map(s=>`<li>${s}</li>`).join("");
+    document.getElementById("rCost").innerHTML = "<strong>What it's costing you:</strong> " + p.cost;
+    document.getElementById("rTurn").innerHTML = "<strong>The turn:</strong> " + p.turn;
+    document.getElementById("buyBtn").href = CONFIG.buyUrl;
+    show("result");
+  }
+
+  function restart(){ idx=0; answers.fill(null); result=null;
+    document.getElementById("emailInput").value=""; document.getElementById("nameInput").value="";
+    show("hero"); }
+
+  return {start,back,submitEmail,showResult,restart};
+})();
+</script>
+</body>
+</html>

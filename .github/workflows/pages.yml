@@ -1,0 +1,42 @@
+name: Deploy quiz funnel to Pages
+
+on:
+  push:
+    branches: ["claude/dating-funnel-setup-qmtm60"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Pull landing page from product branch
+        run: |
+          git fetch origin claude/dating-funnel-product-uyvi5t --depth=1
+          mkdir -p _site
+          git show origin/claude/dating-funnel-product-uyvi5t:site/index.html > _site/index.html
+          ls -la _site
+      - name: Configure Pages (auto-enable)
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
